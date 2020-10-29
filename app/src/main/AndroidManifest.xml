@@ -2,14 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lotto">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/random"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/random"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lotto">
-        <activity android:name=".ResultActivity">
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".WebActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NameActivity">
+            android:name=".ResultActivity"
+            android:theme="@style/AppTheme.Result">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +29,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ConstellationActivity">
+            android:name=".NameActivity"
+            android:theme="@style/AppTheme.Name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +38,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity">
+            android:name=".ConstellationActivity"
+            android:theme="@style/AppTheme.Constellation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
